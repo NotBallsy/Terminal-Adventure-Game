@@ -1,0 +1,135 @@
+import random
+
+hp = 3
+
+print('Solitaire in the Shadows')
+print('======================================================================================================')
+print('As the Solitaire, you are landing on Gryphonne IV to retrieve its hidden artifacts and secrets. However, there is a war involving the Imperial Guard, Chaos Cultists, and Orkz. The air is thick which can be used to your advantage. How will you manuever through the war to obtain the treasures of the planet?')
+print('======================================================================================================')
+print('You can only take 3 hits before you are slain.')
+print('If you encounter a fight, move through difficult obstacles, or flee, there will be a chance you take damage. It will be rolled with dice.')
+print('To make a choice, enter the corresponding number.')
+print('======================================================================================================')
+print('Phase 1: Landing')
+print('======================================================================================================')
+print('The air is thick. The ground trembles due to the distant heavy artillery.')
+print('     1) Move through the war-torn city to seek clues. (2+ you take no damage.)')
+print('     2) Try to sneak and fight through the battlefield.')
+answer = int(input('What is your choice?  '))
+if answer == 1: 
+    dice = random.randint(1,6)
+    print('You rolled a: ', dice)
+    if dice >= 2:
+        print('As you move through the war-torn city, the buildings start to collapse. \nHowever, you were fast enough avoid damage.\nYou have found clues about the treasures.')
+    else:
+        print('The buildings start to collapse but was not fast enough to make it through.')
+        hp -= 1
+        print('You have taken 1 damage.')
+        print('Solitaire hp:', hp)
+        print('However, you uncovered some clues.')
+elif answer == 2:
+    print('As you sneak through, you see a unit of ork boyz heading towards the battlefield.')
+    print('     1) Try to swiftly eliminate the unit. (2+ you take no damage.)')
+    print('     2) You wait for them to leave and sneak past.')
+    answer = int(input('What is your choice?  '))
+    if answer == 1:
+        dice = random.randint(1,6)
+        print('You rolled a: ', dice)
+        if dice >= 2:
+            print('You eliminate the unit with your dazzling blade dance.')
+        else:
+            print('You managed to take them out, but take 1 damage.')
+            hp -= 1
+    elif answer == 2:
+        print('You patiently wait for them to leave and move further into the battlefield.')
+    else:
+        print('Error')
+else:
+    print('Error')
+print('======================================================================================================')
+print('Phase 2: Digging Deeper')
+print('======================================================================================================')
+print('As you keep searching deeper into the planet, you sense the presence of a Chaos Sorcerer who is trying to unleash an ancient daemon beneath the planet.') 
+print('The forces of Chaos are growing stronger and plan to overwhelm the Imperium.')
+print('You must act quickly before the situation worsens.')
+print('     1) Use your agility and cunning to outmanuever everyone and enter the catacombs.')
+print('     2 Try to help the lessen the looming threat.(1-2 damage)')
+answer = int(input('What is your choice?  '))
+if answer == 1:
+    print('You navigate through the catacombs and ancient xenos ruins, where you uncover fragments of an Eldar prophecy that hints to your ultimate goal.')
+elif answer == 2:
+    dice = random.randint(1,6)
+    print('You rolled a: ', dice)
+    if dice >= 4:
+        print('You have managed to weaken the Chaos but have taken slight damage')
+        hp -= 1
+    else:
+        print('You take serious injuries but have weakend the forces')
+        hp -=2
+else:
+    print('Error')
+print('You manage to find some shelter to recover.')
+print('Solitaire hp: ',hp)
+print('     1) Choose to hide to recover +1 hp.')
+print('     2) Escape into the catacombs')
+answer = int(input('What is your choice?  '))
+if answer == 1:
+    print('You have recovered 1 hp.')
+    hp+=1
+    print('Solitaire hp: ', hp)
+    print('After resting up, you enter the catacombs')
+elif answer == 2:
+    print('You navigate through the catacombs and ancient xenos ruins, where you uncover fragments of an Eldar prophecy that hints to your ultimate goal.')
+else:
+    print('Error')
+print('======================================================================================================')
+print('Phase 3: Tipping the Balance')
+print('======================================================================================================')
+print('The conflict is reaching its peak as the Imperium launch a desperate assault to reclaim the planet and the Chaos prepare to unleash their dark ritual.')
+print('You must infiltrate the Chaos stronghold to stop the Sorcerer before the ritual is complete.')
+print('The fate of the planet and the entire sector hangs in the balance.')
+print('Weaving through the battlefield you encounter a Chaos Space Marine and are challenged to a duel.')
+print('     1) Use your mastery of blades to defeat the champion')
+print('     2) Try to outmanuever and escape.(-2 damage)')
+answer = int(input('What is your choice?  '))
+if answer == 1:
+    print('1) With precision and grace you performed a deadly dance of blades and defeated him.')
+elif answer == 2:
+    print('You escape and have been hit.')
+    hp-=2
+    print('Solitaire hp: ', hp)
+else:
+    print('Error')
+print('======================================================================================================')
+print('Phase 4: The Dance of Fate')
+print('======================================================================================================')
+print('Travelling deeper in the stronghold you confront the Chaos Sorcerer who is attempting to summon the daemon.')
+print('     1) Fight a fierce battle.')
+print('     2) Flee')
+answer = int(input('What is your choice?  '))
+if answer == 1:
+    print('The battle was difficult. However, you performed the ultimate dance and slayed the sorcerer.')
+    dice = random.randint(1,6)
+    print('You rolled a: ', dice)
+    if dice >= 4:
+        print('You did not take damage.')
+    else:
+        print('You take damage.')
+        hp-=1
+elif answer == 2:
+    print('You run away in fear. The daemon is unleashed. The planet and its sector is destroyed. Game Over')
+else:
+    print('Error')
+if hp > 0:
+    print('You slip away into the shadows and your mission is complete.')
+    print('Congrats! You win!')
+    print('Solitaire hp: ', hp)
+else:
+    print('Your great sacrifice has saved the planet but not able to bring back the treasures you have found.')
+
+
+
+
+
+
+
